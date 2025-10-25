@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "JobGenie – AI Job Assistant",
+  "version": "1.0",
+  "description": "Scans PDF resumes and stores text locally for AI-based job applications.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "http://localhost:5000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Toggle JobGenie"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentReinject.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "overlay.html",
+        "styles.css",
+        "popup.js",
+        "pdfjs/pdf.min.js",
+        "pdfjs/pdf.worker.min.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

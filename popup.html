@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobGenie</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- ✅ Load pdf.js from CDN before popup.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>JobGenie</h1>
+
+    <label for="resumeFile">Upload Resume (PDF)</label>
+    <input type="file" id="resumeFile" accept=".pdf" />
+
+    <button id="scanBtn">Scan & Save</button>
+
+    <!-- <textarea id="output" placeholder="Extracted resume text will appear here..." readonly></textarea> -->
+  </div>
+
+  <!-- ✅ Load after everything else -->
+  <script src="popup.js"></script>
+</body>
+</html>

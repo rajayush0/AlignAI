@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobGenie</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>JobGenie</h1>
+
+    <label for="resumeFile">Upload Resume (PDF)</label>
+    <input type="file" id="resumeFile" accept=".pdf" />
+
+    <button id="scanBtn">Scan & Save</button>
+
+    <!-- <textarea id="output" placeholder="Extracted resume text will appear here..." readonly></textarea> -->
+  </div>
+
+  <script src="pdfjs/pdf.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
